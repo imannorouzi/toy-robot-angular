@@ -11,37 +11,7 @@ You can access [My Toy Robot Angular Github Page](https://imannorouzi.github.io/
 
 ## How to use
 
-The application is only accepting commands in below format. It doesn't like extra spaces at the start or end of commands and parameters.
-
-* PLACE X,Y,FACE
-* MOVE
-* LEFT
-* RIGHT
-* REPORT
- 
- You can find the explanation for each command at the [end](#description-and-requirements) of this README file.
-
-It is possible to send commands to the Robot using three different methods.
-
-1. Single Input - `app.js` has a listener set on the input field using `keyUp` function. It monitors each input character and sends the typed in value to Robot once `Enter` key is pressed. 
-1. Textarea Input - It is possible to enter multiple commands in the textarea and send them to Robot by clicking on `Execute` button. This action is handled in `readTextArea` in `app.js`.
-1. Text File Input - By choosing a txt file which contains the list of commands, `readInputFile` function would read the content of selected file and send it to simulated robot.
-
-## Robot Object
-
-
-`Robot` class is declared in `Robot.js` file and has below attributes and methods:
-* x: number (0..4) - the column that Robot is located in
-* y: number (0..4) - the row that Robot is located in
-* f: number (0..4) - the direction that Robot is facing, 0: North, 1: EAST, 2: SOUTH, 3: WEST
-* constructor( boardColumnCount: number, boardRowCount: number) 
-* left(): boolean - turns the Robot to the left and returns true if successful
-* right(): boolean - turns the Robot to the right and returns true if successful
-* move(): boolean - moves the Robot one step forward and returns true if successful
-* place(x: number, y: number, f: string): boolean - places the Robot on the board based on input parameters if they are valid and returns true if successful
-* report(): string - returns current state of the Robot (x, y, face)
-* isRobotPlaced(): boolean - tells if the Robot is placed on the board
-
+Click the board or use PLACE command to put the robot on the board and use arrow keys, buttons or input box to move the robot around. You can find the explanation for each command at the [end](#description-and-requirements) of this README file.
 
 ## Build
 
