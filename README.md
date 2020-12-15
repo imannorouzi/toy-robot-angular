@@ -7,7 +7,7 @@ The software comes with a UI in which you can see the robot on a chess like boar
 
 ## How to run
 
-You can access [My Toy Robot Angular Github Page](https://imannorouzi.github.io/toy-robot-angular/index.html) to access a built and ready version. Otherwise, run `ng serve` for a dev server and navigate to `http://localhost:4200/`.
+You can access [My Toy Robot Angular Github Page](https://imannorouzi.github.io/toy-robot-angular-built/) to access a built and ready version. Otherwise, run `ng serve` for a dev server and navigate to `http://localhost:4200/`.
 
 ## How to use
 
