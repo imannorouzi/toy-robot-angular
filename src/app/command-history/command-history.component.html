@@ -1,8 +1,8 @@
 <div class="command-history flexbox-parent">
   <h4>History of commands</h4>
   <span *ngIf="history.length === 0"> No commands yet!</span>
-  <ul #commandList class="commands flexbox-item-grow">
-    <li class="command-wrapper p-1 smooth" (click)="this.repeatCommand(command.command)" *ngFor="let command of history">
+  <ul #commandList class="commands flexbox-item-grow" tabindex=0 >
+    <li class="command-wrapper p-1 smooth"  tabindex=0 (click)="this.repeatCommand(command.command)" *ngFor="let command of history">
       <div class="command" [class.fail]="!command.actionPerformed">{{command.command}}</div>
       <div class="message" *ngIf="command.message">{{command.message}}</div>
     </li>

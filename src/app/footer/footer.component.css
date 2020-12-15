@@ -17,8 +17,9 @@
   padding: 0 0 10px 0;
   list-style: none;
   display: flex;
-  border-bottom: 1px dotted #a7a7a7;
+  margin: 0;
 }
 .footer-links a{
   color: #0030c6;
+  white-space: nowrap;
 }

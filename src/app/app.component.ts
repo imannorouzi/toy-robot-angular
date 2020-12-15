@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {Robot, RobotResponse} from './robot';
 import {CommandHistoryComponent} from './command-history/command-history.component';
 
@@ -113,5 +113,22 @@ export class AppComponent implements OnInit {
     }
 
     this.commandHistory.addCommand(result);
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  onKeydownHandler(event: KeyboardEvent) {
+    switch (event.key) {
+      case 'ArrowUp':
+        this.commandHistory.addCommand(this.robot.move());
+        break;
+
+      case 'ArrowLeft':
+        this.commandHistory.addCommand(this.robot.left());
+        break;
+
+      case 'ArrowRight':
+        this.commandHistory.addCommand(this.robot.right());
+        break;
+    }
   }
 }

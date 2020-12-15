@@ -5,8 +5,10 @@ header{
 
 main{
 }
+.content-wrapper,
 .command-history-wrapper{
   max-height: 100%;
+  overflow: auto;
 }
 
 

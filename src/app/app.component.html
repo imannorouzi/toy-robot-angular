@@ -12,12 +12,12 @@
           <app-command-history (redoCommand)="executeCommand($event)" #commandHistory></app-command-history>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-8 content-wrapper">
 
           <h1>{{title}}</h1>
 
           <section class="board-wrapper">
-            <h2>Board</h2>
+            <h2>Robot Board</h2>
             <hr>
             <app-robot-board (placeChanged)="executeCommand($event)" [robot]="robot" [rows]="rows" [cols]="cols"></app-robot-board>
           </section>
