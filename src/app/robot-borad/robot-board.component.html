@@ -1,0 +1,15 @@
+<p>Click any position to place the Robot.</p>
+<table class="board smooth">
+  <tbody>
+  <tr *ngFor="let r of [].constructor(rows); let row=index;">
+    <td (click)="place(col,  rows - row - 1)" class="smooth" *ngFor="let c of [].constructor(cols); let col=index;">
+      <div *ngIf="robot &&
+      robot.isRobotPlaced() &&
+      (robot.x-1 === col) &&
+      (robot.y-1 === rows - row - 1)"
+           [class]="'robot face-' + this.robot.f" >
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

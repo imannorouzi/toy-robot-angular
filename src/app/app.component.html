@@ -1,0 +1,52 @@
+<div class="flexbox-parent app-root">
+
+  <header class="bg-dark">
+    <app-navbar></app-navbar>
+  </header>
+
+  <div class="flexbox-item-grow content">
+    <main class="container h-100">
+
+      <div class="row h-100 overflow-auto">
+        <div class="col-md-4 command-history-wrapper">
+          <app-command-history (redoCommand)="executeCommand($event)" #commandHistory></app-command-history>
+        </div>
+
+        <div class="col-md-8">
+
+          <h1>{{title}}</h1>
+
+          <section class="board-wrapper">
+            <h2>Board</h2>
+            <hr>
+            <app-robot-board (placeChanged)="executeCommand($event)" [robot]="robot" [rows]="rows" [cols]="cols"></app-robot-board>
+          </section>
+
+          <section >
+            <h2>Move the Robot around</h2>
+            <hr>
+
+            <div clss="buttons">
+              <button class="secondary" (click)="this.commandHistory.addCommand(robot.move())">MOVE</button>
+              <button class="secondary ml-2" (click)="this.commandHistory.addCommand(robot.left())">LEFT</button>
+              <button class="secondary ml-2" (click)="this.commandHistory.addCommand(robot.right())">RIGHT</button>
+              <button class="pull-right" (click)="this.commandHistory.addCommand(robot.report())">REPORT</button>
+            </div>
+            <input (keyup.enter)="inputEnterPressed()"
+                   [(ngModel)]="command"
+                   class="mt-3"
+                   placeholder="Command (Press enter to submit)..."
+                   type="text"/>
+          </section>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+
+  <div class="app-footer-wrapper">
+    <app-footer></app-footer>
+  </div>
+</div>
